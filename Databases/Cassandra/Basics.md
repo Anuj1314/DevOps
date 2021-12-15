@@ -1,5 +1,5 @@
 Cassandra equirements <br/> 
-	java 8
+&ensp;java 8
 	cassandra package comes with few utilities
 		- nodetool: A command line interface for managing a cluster
 		- cassandra utility
