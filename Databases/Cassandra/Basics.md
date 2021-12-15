@@ -9,8 +9,8 @@ Cassandra equirements: <br/>
 * SSTable utilities- SSTables are the immutable data files that Cassandra uses for persisting data on disk.
 	
 ##### ports for communication ##### 
-`7199 - JMX
-7000 - Internode communication (not used if TLS enabled)
+`7199 - JMX <br/>
+7000 - Internode communication (not used if TLS enabled) <br/>
 9042 - CQL native transport port`
 
 
