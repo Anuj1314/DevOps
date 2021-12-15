@@ -1,4 +1,5 @@
-### Cassandra equirements: 
+### Cassandra
+#### Requirements: 
 * java 8
 * data,log,cache directory should be owned by cassandra user
 
