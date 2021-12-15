@@ -9,19 +9,19 @@ Cassandra equirements: <br/>
 * SSTable utilities- SSTables are the immutable data files that Cassandra uses for persisting data on disk.
 	
 ##### ports for communication ##### 
-`7199 - JMX <br/>
-7000 - Internode communication (not used if TLS enabled) <br/>
+`7199 - JMX 
+7000 - Internode communication (not used if TLS enabled) 
 9042 - CQL native transport port`
 
 
 Reference for production deployment: https://docs.datastax.com/en/dse-planning/doc/
 
-Cassandra DB is based on Query First Approach and not on relational model appoach.
-Meaning, A single table should reflect the queries we are tyring to make. OR desing a data model in a way so query needs data to be fetched from single table.
-Limitations of Cassandra: 
-	Its not possible to perform join query becasue it will result in very poor performance as tables would be distributed across the nodes
-	We can only search by primary key in the table, otherwise we have to sepcify 'ALLOW FILTERING' at the end of query, that will result in poor performance.
-	It is possible to search with other key, for that we have to create a SECONDARY index for that column, but its not recommendec as it will result  in poor performace, create secondary index only if there is no other way out.
+Cassandra DB is based on Query First Approach and not on relational model approach <br/>
+Meaning, A single table should reflect the queries we are tyring to make. OR desing a data model in a way so query needs data to be fetched from single table <br/>
+#####Limitations of Cassandra#####
+* Its not possible to perform join query becasue it will result in very poor performance as tables would be distributed across the nodes
+* We can only search by primary key in the table, otherwise we have to sepcify 'ALLOW FILTERING' at the end of query, that will result in poor performance.
+* It is possible to search with other key, for that we have to create a SECONDARY index for that column, but its not recommendec as it will result  in poor performace, create secondary index only if there is no other way out.
 
 Gossip is a peer-to-peer communication protocol in which nodes periodically exchange state information about themselves and about other nodes they know about
 
