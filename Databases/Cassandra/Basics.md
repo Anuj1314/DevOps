@@ -1,24 +1,24 @@
-Cassandra equirements: <br/> 
+#### Cassandra equirements: 
 * java 8
 * data,log,cache directory should be owned by cassandra user
-#### cassandra utilities #### 
-		
+
+#### cassandra utilities  
 * nodetool- A command line interface for managing a cluster
 * cassandra utility
 * cassandra-stress tool- The cassandra-stress tool is a Java-based stress testing utility for basic benchmarking and load testing a Cassandra cluster
 * SSTable utilities- SSTables are the immutable data files that Cassandra uses for persisting data on disk.
-	
-##### ports for communication ##### 
+
+##### ports for communication
 `7199 - JMX 
 7000 - Internode communication (not used if TLS enabled) 
 9042 - CQL native transport port`
-
 
 Reference for production deployment: https://docs.datastax.com/en/dse-planning/doc/
 
 Cassandra DB is based on Query First Approach and not on relational model approach <br/>
 Meaning, A single table should reflect the queries we are tyring to make. OR desing a data model in a way so query needs data to be fetched from single table <br/>
-##### Limitations of Cassandra #####
+
+##### Limitations of Cassandra
 * Its not possible to perform join query becasue it will result in very poor performance as tables would be distributed across the nodes
 * We can only search by primary key in the table, otherwise we have to sepcify 'ALLOW FILTERING' at the end of query, that will result in poor performance.
 * It is possible to search with other key, for that we have to create a SECONDARY index for that column, but its not recommendec as it will result  in poor performace, create secondary index only if there is no other way out.
@@ -26,6 +26,13 @@ Meaning, A single table should reflect the queries we are tyring to make. OR des
 Gossip is a peer-to-peer communication protocol in which nodes periodically exchange state information about themselves and about other nodes they know about
 
 A seed node is used to bootstrap the gossip process for new nodes joining a cluster. To learn the topology of the ring, a joining node contacts one of the nodes in the seeds list in cassandra. yaml
+
+
+
+
+
+
+
 
 #Rack and Datacentre -- update
 Rack is a cluster of connected machines
