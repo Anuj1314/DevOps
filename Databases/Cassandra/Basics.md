@@ -90,14 +90,14 @@ There is a way we can use this query without ALLOW FILTERING, that is secondary 
 
 #QUERIES
 key_space in cassandra is similar to the db in mysql, each keyspace can have tables and table can have data/raws.
-EXAMPLE QUERIES:
+#####EXAMPLE QUERIES:
 
-DESCRIBE KEYSPACES;
+`DESCRIBE KEYSPACES;
 USE test_keyspace;
 DROP KEYSPACE test_keyspace;
-
-#we can define replication for each key_space, by default durability comes as true.
-CREATE KEYSPACE test_keyspace WITH replication = {'class':'SimpleStrategy', 'replication_factor':'1'} AND durable_writes = 'true';
+`
+we can define replication for each key_space, by default durability comes as true.
+`CREATE KEYSPACE test_keyspace WITH replication = {'class':'SimpleStrategy', 'replication_factor':'1'} AND durable_writes = 'true';
 
 CREATE TABLE employee_by_id (id int PRIMARY KEY, name text, position text);
 
@@ -108,7 +108,7 @@ DESCRIBE TABLE employee_by_id;
 DROP TABLE employee_by_id;
 
 CRATEA INDEX ON employee_by_id(name); this will create a secondary index
-
+`
 #
 PENDING: SNITCH/GOSSPI PROTOCOL / WRITEPATH / READPATH/ 
 
