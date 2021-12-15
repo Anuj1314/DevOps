@@ -48,11 +48,11 @@
 
 #### Data Replication Topologies
 1. Simple Strategy (mostly used with single dc and single rack)
-	* every keyspace(db), we can design a replication factor
-	* it will check the token for the data/row, and the replica of that data would be present at very next nodes of that node.
+	- every keyspace(db), we can design a replication factor
+	- it will check the token for the data/row, and the replica of that data would be present at very next nodes of that node.
 
 2. Network Topology strategy: little complicated(can allow us to set replication for each data centre)
-	* within a Data center, it allocates replicas to different racks in order to maximize the availability
+	- within a Data center, it allocates replicas to different racks in order to maximize the availability
 
 #### Some Basics
 - Every raw has a primary key which should be specified for data access
