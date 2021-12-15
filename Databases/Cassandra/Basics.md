@@ -1,8 +1,9 @@
 Cassandra equirements <br/> 
-&ensp;java 8
-	cassandra package comes with few utilities
-		- nodetool: A command line interface for managing a cluster
-		- cassandra utility
+java 8 <br /><br/>
+#### cassandra utilities #### 
+		
+* Bullet nodetool: A command line interface for managing a cluster
+* Bullet cassandra utility
 		- cassandra-stress tool: The cassandra-stress tool is a Java-based stress testing utility for basic benchmarking and load testing a Cassandra cluster
 		- SSTable utilities: SSTables are the immutable data files that Cassandra uses for persisting data on disk.
 	data,log,cache directory should be owned by cassandra user
