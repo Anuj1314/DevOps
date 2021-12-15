@@ -1,13 +1,14 @@
-Cassandra equirements <br/> 
-java 8 <br /><br/>
+Cassandra equirements: <br/> 
+* java 8
+* data,log,cache directory should be owned by cassandra user
 #### cassandra utilities #### 
 		
-* Bullet nodetool: A command line interface for managing a cluster
-* Bullet cassandra utility
-		- cassandra-stress tool: The cassandra-stress tool is a Java-based stress testing utility for basic benchmarking and load testing a Cassandra cluster
-		- SSTable utilities: SSTables are the immutable data files that Cassandra uses for persisting data on disk.
-	data,log,cache directory should be owned by cassandra user
-	 
+* nodetool: A command line interface for managing a cluster
+* cassandra utility
+* cassandra-stress tool: The cassandra-stress tool is a Java-based stress testing utility for basic benchmarking and load testing a Cassandra cluster
+* SSTable utilities: SSTables are the immutable data files that Cassandra uses for persisting data on disk.
+	
+##### ports for communication ##### 
     	7199 - JMX
 	7000 - Internode communication (not used if TLS enabled)
 	9042 - CQL native transport port
