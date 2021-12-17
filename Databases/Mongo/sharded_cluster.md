@@ -3,6 +3,10 @@
 - **config-server**: store metadata about cluster and config of shards
 - **shards**: Basically a collections ReplicaSets that we can scale horizontally
 
+<p align="center">
+  <img src="https://github.com/Anuj1314/MyDevOpsJourney/tree/main/Databases/Mongo/MongoShards.png">
+</p>
+
 **mongos** can communicate with the config server to understand how the data is distributed in sharded cluster<br/>
 It's recommended to have multiple mongos, and load balance them, they are lightweight and don't persist any data.
 
