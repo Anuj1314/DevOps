@@ -82,4 +82,5 @@
 
 **PENDING-TOPICS**: SNITCH/GOSSIP-PROTOCOL/WRITEPATH/READPATH/
 ###### QUESTION
-1. HOW NODE/CLUSTER DISCOVERY HAPPENS IN CASSANDRA?
+1. HOW NODE/CLUSTER DISCOVERY HAPPENS IN CASSANDRA?<br/>
+Cassandra works with peer to peer architecture, with each node connected to all other nodes. Each Cassandra node performs all database operations and can serve client requests without the need for a master node. ... Nodes in a cluster communicate with each other for various purposes.
