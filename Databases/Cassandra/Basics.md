@@ -94,5 +94,10 @@ Each CommitLog maintains an internal bit flag to indicate whether it needs flush
 
 **PENDING-TOPICS**: SNITCH/GOSSIP-PROTOCOL/WRITEPATH/READPATH/COMMITLOG/SSTABLE/MEMTABLE
 ###### QUESTION
+<<<<<<< HEAD
 1. HOW NODE/CLUSTER DISCOVERY HAPPENS IN CASSANDRA?
 
+=======
+1. HOW NODE/CLUSTER DISCOVERY HAPPENS IN CASSANDRA?<br/>
+Cassandra works with peer to peer architecture, with each node connected to all other nodes. Each Cassandra node performs all database operations and can serve client requests without the need for a master node. ... Nodes in a cluster communicate with each other for various purposes.
+>>>>>>> f0b6fcc7a64f0522b7ec0cedb868ccfea9c42c78
