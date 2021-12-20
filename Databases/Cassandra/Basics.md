@@ -60,6 +60,18 @@
 - Clustering columns are used for sorting th data and the order on which data is stored on the disk
 - key_space in cassandra is similar to the db in mysql, each keyspace can have tables and table can have data/raws.
 - we can define replication for each key_space. Default durability is set as true and is configurable.
+- It stores metadata into system keyspaces. The metadata about clusters and some operational data as well.
+- system keyspaces cannot be modified or edited.
+- metadata  consists of
+	- the nodes token
+	- key space and schema definition to support dynamic loading
+	- migration data
+	- weather or not the node is bootstrapped : Bootstrapping is when you want to bring a new node to the cluster, you add it to the cluster.  It will be unaware with the cluster configuration and will not know how the cluster looks like. That node is called the dumb node. When a node comes up, Cassandra has bootstrapping. So once a node is bootstrapped it starts copying the data from other nodes. Those nodes are called the Seed nodes.
+- **CommitLog, Memtable, SSTable**
+The CommitLog is a crash-recovery mechanism that supports Cassandra’s durability goals. Cassandra writes to commit logs first before writing to the Memtables. When the number of objects stored in the Memtable reaches a threshold , the contents of the Memtable are flushed to disk in a file called SStable.
+
+Each CommitLog maintains an internal bit flag to indicate whether it needs flushing. Once a Memtable is flushed to a disk as an SStable, it is immutable and cannot be changed by the application.
+
 
 #### TIMESTAMP, TTL, SECONDARY index 
 * we can have time-stamp for the column which shows, at what time the column has been updated. 
@@ -80,6 +92,7 @@
  - DROP TABLE employee_by_id;
  - CREATE INDEX ON employee_by_id(name); # this will create a secondary index
 
-**PENDING-TOPICS**: SNITCH/GOSSIP-PROTOCOL/WRITEPATH/READPATH/
+**PENDING-TOPICS**: SNITCH/GOSSIP-PROTOCOL/WRITEPATH/READPATH/COMMITLOG/SSTABLE/MEMTABLE
 ###### QUESTION
 1. HOW NODE/CLUSTER DISCOVERY HAPPENS IN CASSANDRA?
+
