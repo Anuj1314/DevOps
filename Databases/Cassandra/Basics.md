@@ -67,6 +67,7 @@
 	- key space and schema definition to support dynamic loading
 	- migration data
 	- weather or not the node is bootstrapped : Bootstrapping is when you want to bring a new node to the cluster, you add it to the cluster.  It will be unaware with the cluster configuration and will not know how the cluster looks like. That node is called the dumb node. When a node comes up, Cassandra has bootstrapping. So once a node is bootstrapped it starts copying the data from other nodes. Those nodes are called the Seed nodes.
+	
 - **CommitLog, Memtable, SSTable**
 The CommitLog is a crash-recovery mechanism that supports Cassandra’s durability goals. Cassandra writes to commit logs first before writing to the Memtables. When the number of objects stored in the Memtable reaches a threshold , the contents of the Memtable are flushed to disk in a file called SStable.
 
@@ -94,10 +95,5 @@ Each CommitLog maintains an internal bit flag to indicate whether it needs flush
 
 **PENDING-TOPICS**: SNITCH/GOSSIP-PROTOCOL/WRITEPATH/READPATH/COMMITLOG/SSTABLE/MEMTABLE
 ###### QUESTION
-<<<<<<< HEAD
-1. HOW NODE/CLUSTER DISCOVERY HAPPENS IN CASSANDRA?
-
-=======
 1. HOW NODE/CLUSTER DISCOVERY HAPPENS IN CASSANDRA?<br/>
 Cassandra works with peer to peer architecture, with each node connected to all other nodes. Each Cassandra node performs all database operations and can serve client requests without the need for a master node. ... Nodes in a cluster communicate with each other for various purposes.
->>>>>>> f0b6fcc7a64f0522b7ec0cedb868ccfea9c42c78
